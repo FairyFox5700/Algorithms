@@ -6,7 +6,9 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            QuickUnionFind.StartUnionFind();
+            Console.ReadLine();
+            
         }
     }
 }
