@@ -3,7 +3,7 @@ using System.Security.Claims;
 
 namespace QueueAndStacks
 {
-    public class StackOfStrings:ILinkedListStructure
+    public class StackOfStrings:ILinkedListStructure<string>
     {
         private Node first= null;
         public void push(string item)
@@ -37,7 +37,7 @@ namespace QueueAndStacks
         }
 
 
-        public static void StartLinkedListOfStrings()
+        public static void Start()
         {
             var linkedList  = new StackOfStrings();
             linkedList.push("I");

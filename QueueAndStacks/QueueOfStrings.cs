@@ -46,7 +46,7 @@ namespace QueueAndStacks
         //is the queue empty?
         public bool isEmpty=> this.first == null;
       
-        public static void StartResizeArrayLinkedListOfStrings()
+        public static void Start()
         {
             var queue= new QueueOfStrings();
 
@@ -69,13 +69,11 @@ namespace QueueAndStacks
 
         public  void  PrintQueue( )
         {
-            
             var current = first;
             while (current!=null)
             {
                 Console.WriteLine(current.item);
                 current = current.next;
-
             }
         }
     }

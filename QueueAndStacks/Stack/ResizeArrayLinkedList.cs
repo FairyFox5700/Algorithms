@@ -2,25 +2,23 @@
 
 namespace QueueAndStacks
 {
-
-    /*Array implementation of a stack.
-    ・Use array s[] to store N items on stack.
-    ・push(): add new item at s[N].
-    ・pop(): remove item from s[N-1
-    */
-    public class FixedArrayLinkedList:ILinkedListStructure
+    public class ResizeArrayLinkedList:ILinkedListStructure<string>
     {
         public string[] storeData { get; set; }
         public int index = 0;
 
-        public FixedArrayLinkedList(int size)
+        public ResizeArrayLinkedList(int size)
         {
             storeData = new string[size];
         }
 
         public void push(string item)
         {
-            //insert to current index than increment
+            //double sized array if it last element
+            if (index == storeData.Length)
+            {
+                resize(storeData.Length*2);
+            }
             storeData[index] = item;
             index++;
         }
@@ -28,19 +26,41 @@ namespace QueueAndStacks
         public string pop()
         {
             //decrement first than take argument
+           
             var item = storeData[--index];
             storeData[index] = null;//avoid loitering (holding reference to an object when it is no longer needed). SO GC can reclaim memory
+            //resize only if it 1/4 of array length
+            if (index > 0 && index < storeData.Length / 4)
+            {
+                resize(storeData.Length/2);
+            }
             return item;
         }
 
+        
         public bool isEmpty()
         {
             return index == 0;
         }
-        
-        public static void StartFixedArrayLinkedListOfStrings()
+
+        /*The \verb#resize()#resize() method is called only when the size of the stack is a power of 2.
+         There are ∼ log_2 n powers of 2 between 1 and nn.
+ */
+
+        private void resize(int size)
         {
-            var linkedList  = new FixedArrayLinkedList(6);
+            var newArray = new  string [size];
+            for (int i = 0; i < storeData.Length; i++)
+            {
+                newArray[i] = storeData[i];
+            }
+
+            storeData = newArray;
+
+        }
+        public static void Start()
+        {
+            var linkedList  = new ResizeArrayLinkedList(6);
             linkedList.push("I");
             linkedList.push("did");
             linkedList.push("He");
@@ -50,6 +70,6 @@ namespace QueueAndStacks
             Console.WriteLine(linkedList.pop());
             Console.ReadKey();
         }
-
+        
     }
 }
