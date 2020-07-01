@@ -6,9 +6,11 @@ namespace Algorithms
     {
         static void Main(string[] args)
         {
-            QuickUnionFind.StartUnionFind();
-            Console.ReadLine();
-            
+           // QuickUnionFind.StartUnionFind();
+            //Console.ReadLine();
+
+           // QuickUnion.StartQuickUnion();
+           WeightedQuickUnion.StartWightedQuickUnion();
         }
     }
 }
