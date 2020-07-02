@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace QueueAndStacks.Generics
 {
-    public class GenericFixedArrayStack<Item>:ILinkedListStructure<Item>
+    public class GenericFixedArrayStack<Item>:ILinkedListStructure<Item>, IEnumerable<Item>
     {
         public Item[] storeData { get; set; }
         public int index = 0;
@@ -39,11 +42,23 @@ namespace QueueAndStacks.Generics
             linkedList.push(2);
             linkedList.push(3);
             linkedList.push(4);
-            Console.WriteLine(linkedList.pop()); 
-            Console.WriteLine(linkedList.pop()); 
-            Console.WriteLine(linkedList.pop());
+            foreach (var node in linkedList)
+            {
+                Console.WriteLine(node);
+            }
+            
             Console.ReadKey();
         }
 
+        public IEnumerator<Item> GetEnumerator()
+        {
+            return Enumerable.Reverse(storeData).GetEnumerator();
+
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }

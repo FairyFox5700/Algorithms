@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using Microsoft.VisualBasic;
 
 namespace QueueAndStacks.Generics
 {
-    public class GenericStack<Item>:ILinkedListStructure<Item>
+    public class GenericStack<Item>:ILinkedListStructure<Item>, IEnumerable<Item>
     {
         private Node first= null;
         
         public void push(Item item)
         {
-            //save a limk to node
+            //save a link to node
             var oldNode = first;
             //create new node
             first = new Node();
@@ -44,13 +47,35 @@ namespace QueueAndStacks.Generics
             linkedList.push(2);
             linkedList.push(3);
             linkedList.push(4);
+            foreach (var node in linkedList)
+            {
+                Console.WriteLine(node);
+            }
+            //pop
             Console.WriteLine(linkedList.pop()); 
             Console.WriteLine(linkedList.pop()); 
             Console.WriteLine(linkedList.pop());
+            
             Console.ReadKey();
+        }
+
+
+        public IEnumerator<Item> GetEnumerator()
+        {
+            Node current =first;
+            while (current != null)
+            {
+                yield return current.item;
+                current = current.next;
+            }
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
         
        
     }
-  
+
+    
 }
