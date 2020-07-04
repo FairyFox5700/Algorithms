@@ -1,4 +1,4 @@
-﻿namespace QueueAndStacks
+﻿namespace QueueAndStacks.Stack
 {
     public interface ILinkedListStructure<Item>
     {

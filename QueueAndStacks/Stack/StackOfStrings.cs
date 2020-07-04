@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Security.Claims;
 
-namespace QueueAndStacks
+namespace QueueAndStacks.Stack
 {
     public class StackOfStrings:ILinkedListStructure<string>
     {

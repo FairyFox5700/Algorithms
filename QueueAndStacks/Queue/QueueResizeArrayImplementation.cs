@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace QueueAndStacks
+namespace QueueAndStacks.Queue
 {
     public class QueueResizeArrayImplementation
     {

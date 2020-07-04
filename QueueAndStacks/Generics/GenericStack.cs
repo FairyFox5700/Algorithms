@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.VisualBasic;
+using QueueAndStacks.Stack;
 
 namespace QueueAndStacks.Generics
 {

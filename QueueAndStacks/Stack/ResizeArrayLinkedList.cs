@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace QueueAndStacks
+namespace QueueAndStacks.Stack
 {
     public class ResizeArrayLinkedList:ILinkedListStructure<string>
     {

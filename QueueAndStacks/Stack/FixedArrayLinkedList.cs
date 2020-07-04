@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace QueueAndStacks
+namespace QueueAndStacks.Stack
 {
 
     /*Array implementation of a stack.
