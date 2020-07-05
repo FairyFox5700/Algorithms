@@ -20,6 +20,19 @@ namespace Sorting
                 }
             }
         }
+        
+        public void Sort(IComparable[] array, int low, int high)
+        {
+            for (int i = low; i <= high; i++)
+            {
+                for (int j = i; j >low ; j--)
+                {
+                    if(isLess(array[j], array[j-1]))
+                        swap(array,j,j-1);
+                    else break;
+                }
+            }
+        }
         public static void Test()
         {
             var selectionSort = new InsertionSort();
