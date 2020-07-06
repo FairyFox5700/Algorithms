@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sorting
+namespace Sorting.MergeSort
 {
     public class BottomUpMergeSort:BaseSortAlgorithm
     {

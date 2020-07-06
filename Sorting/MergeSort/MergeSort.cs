@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sorting
+namespace Sorting.MergeSort
 {
     /*Divide array into two halves.
     ・Recursively sort each half.

@@ -1,6 +1,7 @@
 ﻿using System;
+using Sorting.SimpleSort;
 
-namespace Sorting
+namespace Sorting.MergeSort
 {
     public class ImprovedMergeSort:BaseSortAlgorithm
     {

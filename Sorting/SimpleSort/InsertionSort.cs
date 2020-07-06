@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sorting
+namespace Sorting.SimpleSort
 {
     public class InsertionSort:BaseSortAlgorithm
     {

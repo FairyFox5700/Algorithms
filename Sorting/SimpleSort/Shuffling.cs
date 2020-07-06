@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Sorting
+namespace Sorting.SimpleSort
 {
     public class Shuffling
     {
-        public void Shuffle(object[] array)
+        public void Shuffle(IComparable[] array)
         {
             int len = array.Length;
             for (int i = 0; i < len; i++)
@@ -21,15 +21,12 @@ namespace Sorting
             array[seconIndex] = temp;
         }
         
-        protected static void printArray(IComparable[] testArray)
-        {
-            
-        }
+
         
         public static void Test()
         {
             var selectionSort = new Shuffling();
-            var array = new object [] {1, 2, 4, "k", 4, 3,8,"P",3,9,1,0};
+            var array = new IComparable [] {1, 2, 4, "k", 4, 3,8,"P",3,9,1,0};
             selectionSort.Shuffle(array);
             foreach (var element in array )
             {

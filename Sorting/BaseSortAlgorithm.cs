@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Sorting
 {
@@ -14,7 +15,7 @@ namespace Sorting
                 testArray[j] = new Random().Next(0, 20);
             }
         }
-        protected static bool isLess(IComparable firstElement, IComparable secondElement)
+        protected static bool isLess(  IComparable firstElement, IComparable secondElement)
         {
             return firstElement.CompareTo(secondElement) < 0;
         }
